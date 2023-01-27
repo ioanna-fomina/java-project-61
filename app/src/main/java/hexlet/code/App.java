@@ -3,33 +3,38 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 public class App {
     public static String userChoice;
-    public static String[] game = new String[3];
     public static String[] gameParams(String userChoice) {
+        String[] game = new String[3];
         switch (userChoice) {
             case "2" -> {
                 game[0] = Even.getRules();
-                game[1] = Even.getQuestion();
-                game[2] = Even.getCorrectAnswer();
+                String[] questionAndAnswer = Even.getQuestionAndAnswer();
+                game[1] = questionAndAnswer[0];
+                game[2] = questionAndAnswer[1];
             }
             case "3" -> {
                 game[0] = Calc.getRules();
-                game[1] = Calc.getQuestion();
-                game[2] = Calc.getCorrectAnswer();
+                String[] questionAndAnswer = Calc.getQuestionAndAnswer();
+                game[1] = questionAndAnswer[0];
+                game[2] = questionAndAnswer[1];
             }
             /*case "4" -> {
                 game[0] = GCD.getRules();
-                game[1] = GCD.getQuestion();
-                game[2] = GCD.getCorrectAnswer();
+                String[] questionAndAnswer = GCD.getQuestionAndAnswer();
+                game[1] = questionAndAnswer[0];
+                game[2] = questionAndAnswer[1];
             }
             case "5" -> {
                 game[0] = Progression.getRules();
-                game[1] = Progression.getQuestion();
-                game[2] = Progression.getCorrectAnswer();
+                String[] questionAndAnswer = Progression.getQuestionAndAnswer();
+                game[1] = questionAndAnswer[0];
+                game[2] = questionAndAnswer[1];
             }
             case "6" ->
                 game[0] = Prime.getRules();
-                game[1] = Prime.getQuestion();
-                game[2] = Prime.getCorrectAnswer();
+                String[] questionAndAnswer = Prime.getQuestionAndAnswer();
+                game[1] = questionAndAnswer[0];
+                game[2] = questionAndAnswer[1];
             }*/
         }
         return game;
