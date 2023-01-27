@@ -11,8 +11,9 @@ public class Engine {
 
         var count = 0;
         while (count < ROUND) {
-            String question = App.gameParams(userChoice)[1];
-            String correctAnswer = App.gameParams(userChoice)[2];
+            String[] questionAndAnswer = App.gameParams(userChoice);
+            String question = questionAndAnswer[1];
+            String correctAnswer = questionAndAnswer[2];
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String userAnswer = scanner.next();
@@ -22,6 +23,7 @@ public class Engine {
             } else {
                 System.out.println("'" + userAnswer
                         + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("Let's try again, " + Cli.userName + "!");
                 scanner.close();
                 break;
             }
