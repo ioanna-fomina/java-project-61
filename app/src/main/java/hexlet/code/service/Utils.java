@@ -1,14 +1,42 @@
 package hexlet.code.service;
 import java.util.Random;
+import java.util.Arrays;
 
 public class Utils {
     public static int randNum() {
         return 100 - ((int) (Math.random() * 100));
     }
+    public static int randNum(int min, int max) {
+        return (int) (Math.random() * (max - min - 1)) + min;
+    }
     public static String[] operators = {"+", "-", "*"};
     public static String randElement(String[] array) {
         int i = new Random().nextInt(array.length);
         return array[i];
+    }
+
+    /*public static void fillArrayRandProgression(int[] array) {
+        int firstNum = randNum();
+        for (var i = 0; i < array.length; i += 1) {
+            array[i] = firstNum;
+            firstNum += 1;
+        }
+    }*/
+    public static void fillArrayRandProgression(String[] array) {
+        int firstNum = randNum();
+        for (var i = 0; i < array.length; i += 1) {
+            array[i] = Integer.toString(firstNum);
+            firstNum += 1;
+        }
+    }
+
+    public static String arrayToString(String[] array) {
+        var result = new StringBuilder();
+        for (var i : array) {
+            result.append(i);
+            result.append(" ");
+        }
+        return result.toString();
     }
     public static int gcdOfNumbers(int n1, int n2) {
         if (n1 == 0) {
