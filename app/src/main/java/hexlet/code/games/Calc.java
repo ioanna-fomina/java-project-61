@@ -1,16 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.service.Utils;
 public class Calc {
-    //private String rules;
-    //private String question;
-    //private String correctAnswer;
-
-    /*Calc(String rules, String question, String correctAnswer) {
-        this.rules = rules;
-        this.question = question;
-        this.correctAnswer = correctAnswer;
-    }*/
-
     public static String getRules() {
         var rules = "What is the result of the expression?";
         return rules;

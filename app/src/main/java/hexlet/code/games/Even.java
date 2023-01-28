@@ -1,7 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.service.Utils;
 public class Even {
-
     public static String getRules() {
         String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         return rules;
