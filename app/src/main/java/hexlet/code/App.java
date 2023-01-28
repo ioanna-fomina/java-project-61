@@ -30,12 +30,12 @@ public class App {
                 game[1] = questionAndAnswer[0];
                 game[2] = questionAndAnswer[1];
             }
-            /*case "6" ->
+            case "6" -> {
                 game[0] = Prime.getRules();
                 String[] questionAndAnswer = Prime.getQuestionAndAnswer();
                 game[1] = questionAndAnswer[0];
                 game[2] = questionAndAnswer[1];
-            }*/
+            }
         }
         return game;
     }
@@ -44,7 +44,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter." +
-                "\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n0 - Exit");
+                "\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
         userChoice = scanner.next();
         switch (userChoice) {

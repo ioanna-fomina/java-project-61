@@ -14,14 +14,6 @@ public class Utils {
         int i = new Random().nextInt(array.length);
         return array[i];
     }
-
-    /*public static void fillArrayRandProgression(int[] array) {
-        int firstNum = randNum();
-        for (var i = 0; i < array.length; i += 1) {
-            array[i] = firstNum;
-            firstNum += 1;
-        }
-    }*/
     public static void fillArrayRandProgression(String[] array) {
         int firstNum = randNum();
         for (var i = 0; i < array.length; i += 1) {
@@ -37,6 +29,18 @@ public class Utils {
             result.append(" ");
         }
         return result.toString();
+    }
+
+    public static boolean isPrime(int num) {
+        if (num > 1) {
+            for (int i = 2; i < num; i += 1) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
     }
     public static int gcdOfNumbers(int n1, int n2) {
         if (n1 == 0) {
