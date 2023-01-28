@@ -6,7 +6,6 @@ public  class GCD {
         String rules = "Find the greatest common divisor of given numbers.";
         return rules;
     }
-
     public static String[] getQuestionAndAnswer() {
         int num1 = Utils.randNum();
         int num2 = Utils.randNum();

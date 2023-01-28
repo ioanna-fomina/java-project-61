@@ -1,6 +1,5 @@
 package hexlet.code.service;
 import java.util.Random;
-import java.util.Arrays;
 
 public class Utils {
     public static int randNum() {
@@ -21,7 +20,6 @@ public class Utils {
             firstNum += 1;
         }
     }
-
     public static String arrayToString(String[] array) {
         var result = new StringBuilder();
         for (var i : array) {
@@ -30,7 +28,6 @@ public class Utils {
         }
         return result.toString();
     }
-
     public static boolean isPrime(int num) {
         if (num > 1) {
             for (int i = 2; i < num; i += 1) {

@@ -3,9 +3,9 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 public class App {
     public static String userChoice;
-    public static String[] gameParams(String userChoice) {
+    public static String[] gameParams(String choice) {
         String[] game = new String[3];
-        switch (userChoice) {
+        switch (choice) {
             case "2" -> {
                 game[0] = Even.getRules();
                 String[] questionAndAnswer = Even.getQuestionAndAnswer();
@@ -43,8 +43,8 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please enter the game number and press Enter." +
-                "\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
+        System.out.println("Please enter the game number and press Enter."
+                + "\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
         userChoice = scanner.next();
         switch (userChoice) {

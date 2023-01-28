@@ -5,7 +5,6 @@ public class Calc {
         var rules = "What is the result of the expression?";
         return rules;
     }
-
     public static String[] getQuestionAndAnswer() {
         int num1 = Utils.randNum();
         int num2 = Utils.randNum();
