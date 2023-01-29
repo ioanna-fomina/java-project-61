@@ -14,9 +14,9 @@ public class App {
     public String getUserChoice() {
         return userChoice;
     }
-    //public void setUserChoice(String userChoice) {
-    //    this.userChoice = userChoice;
-    //}
+    public void setUserChoice(String userChoice) {
+        this.userChoice = userChoice;
+    }
     public static String[] gameParams(String choice) {
         final int paramsCount = 3;
         String[] game = new String[paramsCount];
