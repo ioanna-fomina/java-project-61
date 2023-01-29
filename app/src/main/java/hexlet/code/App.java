@@ -5,7 +5,6 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-import hexlet.code.Cli;
 import java.util.Scanner;
 public class App {
     private String userChoice;
@@ -13,14 +12,14 @@ public class App {
         this.userChoice = userChoice;
     }
     public String getUserChoice() {
-        return this.userChoice;
+        return userChoice;
     }
     //public void setUserChoice(String userChoice) {
     //    this.userChoice = userChoice;
     //}
     public static String[] gameParams(String choice) {
-        final int PARAMS_COUNT = 3;
-        String[] game = new String[PARAMS_COUNT];
+        final int paramsCount = 3;
+        String[] game = new String[paramsCount];
         switch (choice) {
             case "2" -> {
                 game[0] = Even.getRules();

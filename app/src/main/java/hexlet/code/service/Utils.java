@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Utils {
     public static int randNum() {
-        int maxRandNumber = 100;
+        final int maxRandNumber = 100;
         return maxRandNumber - ((int) (Math.random() * maxRandNumber));
     }
     public static int randNum(int min, int max) {

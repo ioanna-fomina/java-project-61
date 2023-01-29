@@ -1,7 +1,5 @@
 package hexlet.code;
 import java.util.Scanner;
-import hexlet.code.Cli;
-import hexlet.code.App;
 
 public class Engine {
     public static final int ROUND = 3;
