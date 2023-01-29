@@ -7,7 +7,7 @@ import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 import java.util.Scanner;
 public class App {
-    private String userChoice;
+    /*private String userChoice;
     App(String userChoice) {
         this.userChoice = userChoice;
     }
@@ -16,7 +16,7 @@ public class App {
     }
     public void setUserChoice(String userChoice) {
         this.userChoice = userChoice;
-    }
+    }*/
     public static String[] gameParams(String choice) {
         final int paramsCount = 3;
         String[] game = new String[paramsCount];
@@ -55,21 +55,24 @@ public class App {
         }
         return game;
     }
-
+    /*public static String getUserChoice(Scanner scanner) {
+        String userChoice = scanner.next();
+        return userChoice;
+    }*/
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter."
                 + "\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
-        App app = new App(scanner.next());
-        switch (app.getUserChoice()) {
+        String userChoice = scanner.next();
+        switch (userChoice) {
             case "1" -> {
                 Cli.greeting(scanner);
                 scanner.close();
             }
             case "0" -> scanner.close();
-            case "2", "3", "4", "5", "6" -> Engine.createGame(scanner, app.getUserChoice());
+            case "2", "3", "4", "5", "6" -> Engine.createGame(scanner, userChoice);
             default -> {
                 System.out.print("Incorrect input");
                 scanner.close();
