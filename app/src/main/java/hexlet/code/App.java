@@ -7,16 +7,6 @@ import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 import java.util.Scanner;
 public class App {
-    /*private String userChoice;
-    App(String userChoice) {
-        this.userChoice = userChoice;
-    }
-    public String getUserChoice() {
-        return userChoice;
-    }
-    public void setUserChoice(String userChoice) {
-        this.userChoice = userChoice;
-    }*/
     public static String[] gameParams(String choice) {
         final int paramsCount = 3;
         String[] game = new String[paramsCount];
@@ -55,10 +45,6 @@ public class App {
         }
         return game;
     }
-    /*public static String getUserChoice(Scanner scanner) {
-        String userChoice = scanner.next();
-        return userChoice;
-    }*/
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
