@@ -3,15 +3,16 @@ import java.util.Random;
 
 public class Utils {
     public static int randNum() {
-        return 100 - ((int) (Math.random() * 100));
+        int maxRandNumber = 100;
+        return maxRandNumber - ((int) (Math.random() * maxRandNumber));
     }
     public static int randNum(int min, int max) {
         return (int) (Math.random() * (max - min - 1)) + min;
     }
-    public static String[] operators = {"+", "-", "*"};
-    public static String randElement(String[] array) {
-        int i = new Random().nextInt(array.length);
-        return array[i];
+    public static String randOperator() {
+        String[] operators = {"+", "-", "*"};
+        int i = new Random().nextInt(operators.length);
+        return operators[i];
     }
     public static void fillArrayRandProgression(String[] array) {
         int firstNum = randNum();

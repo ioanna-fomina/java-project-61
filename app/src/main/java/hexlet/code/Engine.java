@@ -1,11 +1,13 @@
 package hexlet.code;
 import java.util.Scanner;
+import hexlet.code.Cli;
+import hexlet.code.App;
 
 public class Engine {
     public static final int ROUND = 3;
 
     public static void createGame(Scanner scanner, String userChoice) {
-        Cli.greeting(scanner);
+        String userName = Cli.greeting(scanner);
         String rules = App.gameParams(userChoice)[0];
         System.out.println(rules);
 
@@ -23,13 +25,13 @@ public class Engine {
             } else {
                 System.out.println("'" + userAnswer
                         + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + Cli.userName + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 scanner.close();
                 break;
             }
         }
         if (count == ROUND) {
-            System.out.println("Congratulations, " + Cli.userName + "!");
+            System.out.println("Congratulations, " + userName + "!");
             scanner.close();
         }
     }

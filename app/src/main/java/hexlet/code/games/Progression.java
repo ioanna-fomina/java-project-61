@@ -7,7 +7,9 @@ public class Progression {
         return rules;
     }
     public static String[] getQuestionAndAnswer() {
-        String[] numbers = new String[Utils.randNum(5, 10)];
+        int minNumbersLength = 5;
+        int maxNumbersLength = 10;
+        String[] numbers = new String[Utils.randNum(minNumbersLength, maxNumbersLength)];
         Utils.fillArrayRandProgression(numbers);
 
         int missingNumberPlace = Utils.randNum(0, numbers.length);

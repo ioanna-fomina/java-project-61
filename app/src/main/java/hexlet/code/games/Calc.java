@@ -8,7 +8,7 @@ public class Calc {
     public static String[] getQuestionAndAnswer() {
         int num1 = Utils.randNum();
         int num2 = Utils.randNum();
-        String operator = Utils.randElement(Utils.operators);
+        String operator = Utils.randOperator();
         String question = Integer.toString(num1) + " " + operator + " " + Integer.toString(num2);
         String correctAnswer = "";
         switch (operator) {
@@ -21,6 +21,7 @@ public class Calc {
             case "*" -> {
                 correctAnswer = Integer.toString(num1 * num2);
             }
+            default -> { }
         }
         String[] paramsArray = {question, correctAnswer};
         return paramsArray;

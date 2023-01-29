@@ -1,10 +1,26 @@
 package hexlet.code;
-import hexlet.code.games.*;
+
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+import hexlet.code.Cli;
 import java.util.Scanner;
 public class App {
-    public static String userChoice;
+    private String userChoice;
+    App(String userChoice) {
+        this.userChoice = userChoice;
+    }
+    public String getUserChoice() {
+        return this.userChoice;
+    }
+    //public void setUserChoice(String userChoice) {
+    //    this.userChoice = userChoice;
+    //}
     public static String[] gameParams(String choice) {
-        String[] game = new String[3];
+        final int PARAMS_COUNT = 3;
+        String[] game = new String[PARAMS_COUNT];
         switch (choice) {
             case "2" -> {
                 game[0] = Even.getRules();
@@ -36,6 +52,7 @@ public class App {
                 game[1] = questionAndAnswer[0];
                 game[2] = questionAndAnswer[1];
             }
+            default -> { }
         }
         return game;
     }
@@ -46,14 +63,14 @@ public class App {
         System.out.println("Please enter the game number and press Enter."
                 + "\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
-        userChoice = scanner.next();
-        switch (userChoice) {
+        App app = new App(scanner.next());
+        switch (app.getUserChoice()) {
             case "1" -> {
                 Cli.greeting(scanner);
                 scanner.close();
             }
             case "0" -> scanner.close();
-            case "2", "3", "4", "5", "6" -> Engine.createGame(scanner, userChoice);
+            case "2", "3", "4", "5", "6" -> Engine.createGame(scanner, app.getUserChoice());
             default -> {
                 System.out.print("Incorrect input");
                 scanner.close();
