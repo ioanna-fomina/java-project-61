@@ -1,6 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.utils.Utils;
-
+import hexlet.code.Engine;
 public class Prime {
     public static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     static boolean isPrime(int num) {
@@ -14,21 +14,16 @@ public class Prime {
         }
         return true;
     }
-    static String[] questionAndAnswer() {
-        int number = Utils.randNum();
-        String question = Integer.toString(number);
-        String correctAnswer = isPrime(number) ? "yes" : "no";
-        String[] paramsArray = {question, correctAnswer};
-        return paramsArray;
-    }
-    public static String[][] getQuestionAndAnswer() {
-        final int round = 3;
-        String[][] paramsArray = new String[round][2];
-        for (var item : paramsArray) {
-            String[] params = questionAndAnswer();
-            item[0] = params[0];
-            item[1] = params[1];
+    public static String[][] runGame() {
+        int arraysCount = Engine.ROUNDS_COUNT;
+        String[][] questionAndAnswer = new String[arraysCount][2];
+        for (var item : questionAndAnswer) {
+            int number = Utils.randNum();
+            String question = Integer.toString(number);
+            String correctAnswer = isPrime(number) ? "yes" : "no";
+            item[0] = question;
+            item[1] = correctAnswer;
         }
-        return paramsArray;
+        return questionAndAnswer;
     }
 }

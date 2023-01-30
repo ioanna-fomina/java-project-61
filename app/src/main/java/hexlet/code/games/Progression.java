@@ -1,6 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.utils.Utils;
-
+import hexlet.code.Engine;
 public class Progression {
     public static final String DESCRIPTION = "What number is missing in the progression?";
     static void fillArrayRandProgression(String[] array) {
@@ -18,28 +18,23 @@ public class Progression {
         }
         return result.toString();
     }
-    static String[] questionAndAnswer() {
-        final int minNumbersLength = 5;
-        final int maxNumbersLength = 10;
-        String[] numbers = new String[Utils.randNum(minNumbersLength, maxNumbersLength)];
-        fillArrayRandProgression(numbers);
+    public static String[][] runGame() {
+        int arraysCount = Engine.ROUNDS_COUNT;
+        String[][] questionAndAnswer = new String[arraysCount][2];
+        for (var item : questionAndAnswer) {
+            final int minNumbersLength = 5;
+            final int maxNumbersLength = 10;
+            String[] numbers = new String[Utils.randNum(minNumbersLength, maxNumbersLength)];
+            fillArrayRandProgression(numbers);
 
-        int missingNumberPlace = Utils.randNum(0, numbers.length);
-        String correctAnswer = numbers[missingNumberPlace];
-        numbers[missingNumberPlace] = "..";
+            int placeOfMissingNumber = Utils.randNum(0, numbers.length);
+            String correctAnswer = numbers[placeOfMissingNumber];
+            numbers[placeOfMissingNumber] = "..";
 
-        String question = arrayToString(numbers);
-        String[] paramsArray = {question, correctAnswer};
-        return paramsArray;
-    }
-    public static String[][] getQuestionAndAnswer() {
-        final int round = 3;
-        String[][] paramsArray = new String[round][2];
-        for (var item : paramsArray) {
-            String[] params = questionAndAnswer();
-            item[0] = params[0];
-            item[1] = params[1];
+            String question = arrayToString(numbers);
+            item[0] = question;
+            item[1] = correctAnswer;
         }
-        return paramsArray;
+        return questionAndAnswer;
     }
 }

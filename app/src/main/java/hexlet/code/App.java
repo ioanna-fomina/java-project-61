@@ -1,5 +1,4 @@
 package hexlet.code;
-
 import hexlet.code.games.Even;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
@@ -20,11 +19,11 @@ public class App {
                 scanner.close();
             }
             case "0" -> scanner.close();
-            case "2" -> Engine.createGame(scanner, Even.DESCRIPTION, Even.getQuestionAndAnswer());
-            case "3" -> Engine.createGame(scanner, Calc.DESCRIPTION, Calc.getQuestionAndAnswer());
-            case "4" -> Engine.createGame(scanner, GCD.DESCRIPTION, GCD.getQuestionAndAnswer());
-            case "5" -> Engine.createGame(scanner, Progression.DESCRIPTION, Progression.getQuestionAndAnswer());
-            case "6" -> Engine.createGame(scanner, Prime.DESCRIPTION, Prime.getQuestionAndAnswer());
+            case "2" -> Engine.createGame(scanner, Even.DESCRIPTION, Even.runGame());
+            case "3" -> Engine.createGame(scanner, Calc.DESCRIPTION, Calc.runGame());
+            case "4" -> Engine.createGame(scanner, GCD.DESCRIPTION, GCD.runGame());
+            case "5" -> Engine.createGame(scanner, Progression.DESCRIPTION, Progression.runGame());
+            case "6" -> Engine.createGame(scanner, Prime.DESCRIPTION, Prime.runGame());
             default -> {
                 System.out.print("Incorrect input");
                 scanner.close();
