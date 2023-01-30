@@ -2,8 +2,8 @@ package hexlet.code.games;
 import hexlet.code.utils.Utils;
 public class Even {
     public static String getDescription() {
-        String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        return rules;
+        String descriprion = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        return descriprion;
     }
 
     static String[] questionAndAnswer() {

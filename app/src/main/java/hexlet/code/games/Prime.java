@@ -3,8 +3,8 @@ import hexlet.code.utils.Utils;
 
 public class Prime {
     public static String getDescription() {
-        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        return rules;
+        String descriprion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        return descriprion;
     }
     static boolean isPrime(int num) {
         if (num <= 1) {

@@ -3,8 +3,8 @@ import hexlet.code.utils.Utils;
 
 public  class GCD {
     public static String getDescription() {
-        String rules = "Find the greatest common divisor of given numbers.";
-        return rules;
+        String descriprion = "Find the greatest common divisor of given numbers.";
+        return descriprion;
     }
 
     static int gcdOfNumbers(int n1, int n2) {

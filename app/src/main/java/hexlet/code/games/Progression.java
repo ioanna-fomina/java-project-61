@@ -3,8 +3,8 @@ import hexlet.code.utils.Utils;
 
 public class Progression {
     public static String getDescription() {
-        String rules = "What number is missing in the progression?";
-        return rules;
+        String descriprion = "What number is missing in the progression?";
+        return descriprion;
     }
     static void fillArrayRandProgression(String[] array) {
         int firstNum = Utils.randNum();

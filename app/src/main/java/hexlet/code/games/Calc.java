@@ -3,8 +3,8 @@ import hexlet.code.utils.Utils;
 import java.util.Random;
 public class Calc {
     public static String getDescription() {
-        var rules = "What is the result of the expression?";
-        return rules;
+        var descriprion = "What is the result of the expression?";
+        return descriprion;
     }
     static String randOperator() {
         String[] operators = {"+", "-", "*"};
