@@ -7,44 +7,6 @@ import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 import java.util.Scanner;
 public class App {
-    public static String[] gameParams(String choice) {
-        final int paramsCount = 3;
-        String[] game = new String[paramsCount];
-        switch (choice) {
-            case "2" -> {
-                game[0] = Even.getRules();
-                String[] questionAndAnswer = Even.getQuestionAndAnswer();
-                game[1] = questionAndAnswer[0];
-                game[2] = questionAndAnswer[1];
-            }
-            case "3" -> {
-                game[0] = Calc.getRules();
-                String[] questionAndAnswer = Calc.getQuestionAndAnswer();
-                game[1] = questionAndAnswer[0];
-                game[2] = questionAndAnswer[1];
-            }
-            case "4" -> {
-                game[0] = GCD.getRules();
-                String[] questionAndAnswer = GCD.getQuestionAndAnswer();
-                game[1] = questionAndAnswer[0];
-                game[2] = questionAndAnswer[1];
-            }
-            case "5" -> {
-                game[0] = Progression.getRules();
-                String[] questionAndAnswer = Progression.getQuestionAndAnswer();
-                game[1] = questionAndAnswer[0];
-                game[2] = questionAndAnswer[1];
-            }
-            case "6" -> {
-                game[0] = Prime.getRules();
-                String[] questionAndAnswer = Prime.getQuestionAndAnswer();
-                game[1] = questionAndAnswer[0];
-                game[2] = questionAndAnswer[1];
-            }
-            default -> { }
-        }
-        return game;
-    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -54,11 +16,15 @@ public class App {
         String userChoice = scanner.next();
         switch (userChoice) {
             case "1" -> {
-                Cli.greeting(scanner);
+                Engine.greeting(scanner);
                 scanner.close();
             }
             case "0" -> scanner.close();
-            case "2", "3", "4", "5", "6" -> Engine.createGame(scanner, userChoice);
+            case "2" -> Engine.createGame(scanner, Even.getDescription(), Even.getQuestionAndAnswer());
+            case "3" -> Engine.createGame(scanner, Calc.getDescription(), Calc.getQuestionAndAnswer());
+            case "4" -> Engine.createGame(scanner, GCD.getDescription(), GCD.getQuestionAndAnswer());
+            case "5" -> Engine.createGame(scanner, Progression.getDescription(), Progression.getQuestionAndAnswer());
+            case "6" -> Engine.createGame(scanner, Prime.getDescription(), Prime.getQuestionAndAnswer());
             default -> {
                 System.out.print("Incorrect input");
                 scanner.close();
