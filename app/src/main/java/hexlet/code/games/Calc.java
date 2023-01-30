@@ -2,10 +2,7 @@ package hexlet.code.games;
 import hexlet.code.utils.Utils;
 import java.util.Random;
 public class Calc {
-    public static String getDescription() {
-        var descriprion = "What is the result of the expression?";
-        return descriprion;
-    }
+    public static final String DESCRIPTION = "What is the result of the expression?";
     static String randOperator() {
         String[] operators = {"+", "-", "*"};
         int i = new Random().nextInt(operators.length);

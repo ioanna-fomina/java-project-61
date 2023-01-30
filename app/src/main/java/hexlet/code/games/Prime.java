@@ -2,10 +2,7 @@ package hexlet.code.games;
 import hexlet.code.utils.Utils;
 
 public class Prime {
-    public static String getDescription() {
-        String descriprion = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        return descriprion;
-    }
+    public static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     static boolean isPrime(int num) {
         if (num <= 1) {
             return false;

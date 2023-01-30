@@ -2,10 +2,7 @@ package hexlet.code.games;
 import hexlet.code.utils.Utils;
 
 public class Progression {
-    public static String getDescription() {
-        String descriprion = "What number is missing in the progression?";
-        return descriprion;
-    }
+    public static final String DESCRIPTION = "What number is missing in the progression?";
     static void fillArrayRandProgression(String[] array) {
         int firstNum = Utils.randNum();
         for (var i = 0; i < array.length; i += 1) {

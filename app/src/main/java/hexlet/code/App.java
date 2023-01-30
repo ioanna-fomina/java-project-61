@@ -20,11 +20,11 @@ public class App {
                 scanner.close();
             }
             case "0" -> scanner.close();
-            case "2" -> Engine.createGame(scanner, Even.getDescription(), Even.getQuestionAndAnswer());
-            case "3" -> Engine.createGame(scanner, Calc.getDescription(), Calc.getQuestionAndAnswer());
-            case "4" -> Engine.createGame(scanner, GCD.getDescription(), GCD.getQuestionAndAnswer());
-            case "5" -> Engine.createGame(scanner, Progression.getDescription(), Progression.getQuestionAndAnswer());
-            case "6" -> Engine.createGame(scanner, Prime.getDescription(), Prime.getQuestionAndAnswer());
+            case "2" -> Engine.createGame(scanner, Even.DESCRIPTION, Even.getQuestionAndAnswer());
+            case "3" -> Engine.createGame(scanner, Calc.DESCRIPTION, Calc.getQuestionAndAnswer());
+            case "4" -> Engine.createGame(scanner, GCD.DESCRIPTION, GCD.getQuestionAndAnswer());
+            case "5" -> Engine.createGame(scanner, Progression.DESCRIPTION, Progression.getQuestionAndAnswer());
+            case "6" -> Engine.createGame(scanner, Prime.DESCRIPTION, Prime.getQuestionAndAnswer());
             default -> {
                 System.out.print("Incorrect input");
                 scanner.close();

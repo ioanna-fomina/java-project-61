@@ -1,11 +1,7 @@
 package hexlet.code.games;
 import hexlet.code.utils.Utils;
 public class Even {
-    public static String getDescription() {
-        String descriprion = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        return descriprion;
-    }
-
+    public static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     static String[] questionAndAnswer() {
         int number = Utils.randNum();
         String question = Integer.toString(number);
@@ -23,4 +19,5 @@ public class Even {
         }
         return paramsArray;
     }
+    //public static String[][] runGame()
 }

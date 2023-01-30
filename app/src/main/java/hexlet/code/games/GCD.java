@@ -2,11 +2,7 @@ package hexlet.code.games;
 import hexlet.code.utils.Utils;
 
 public  class GCD {
-    public static String getDescription() {
-        String descriprion = "Find the greatest common divisor of given numbers.";
-        return descriprion;
-    }
-
+    public static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
     static int gcdOfNumbers(int n1, int n2) {
         if (n2 == 0) {
             return n1;
