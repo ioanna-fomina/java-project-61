@@ -33,7 +33,7 @@ public class Calc {
         return paramsArray;
     }
     public static String[][] getQuestionAndAnswer() {
-        int round = 3;
+        final int round = 3;
         String[][] paramsArray = new String[round][2];
         for (var item : paramsArray) {
             String[] params = questionAndAnswer();
