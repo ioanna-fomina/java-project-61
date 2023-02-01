@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int ROUNDS_COUNT = 3;
-    public static void createGame(Scanner scanner, String description, String[][] questionsAndAnswers) {
+    public static void createGame(String description, String[][] questionsAndAnswers) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("\nWelcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userName = scanner.next();

@@ -1,5 +1,4 @@
 package hexlet.code.games;
-import java.util.Scanner;
 import hexlet.code.utils.Utils;
 import hexlet.code.Engine;
 public  class GCD {
@@ -18,7 +17,7 @@ public  class GCD {
         String[] array = {question, correctAnswer};
         return array;
     }
-    public static void runGame(Scanner scanner) {
+    public static void runGame() {
         int arraysCount = Engine.ROUNDS_COUNT;
         String[][] dataForGame = new String[arraysCount][2];
         for (var item: dataForGame) {
@@ -26,6 +25,6 @@ public  class GCD {
             item[0] = data[0];
             item[1] = data[1];
         }
-        Engine.createGame(scanner, DESCRIPTION, dataForGame);
+        Engine.createGame(DESCRIPTION, dataForGame);
     }
 }

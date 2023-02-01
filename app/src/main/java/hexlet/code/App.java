@@ -16,11 +16,11 @@ public class App {
         switch (userChoice) {
             case "1" -> Cli.greeting(scanner);
             case "0" -> scanner.close();
-            case "2" -> Even.runGame(scanner);
-            case "3" -> Calc.runGame(scanner);
-            case "4" -> GCD.runGame(scanner);
-            case "5" -> Progression.runGame(scanner);
-            case "6" -> Prime.runGame(scanner);
+            case "2" -> Even.runGame();
+            case "3" -> Calc.runGame();
+            case "4" -> GCD.runGame();
+            case "5" -> Progression.runGame();
+            case "6" -> Prime.runGame();
             default -> {
                 System.out.print("Incorrect input");
                 scanner.close();
