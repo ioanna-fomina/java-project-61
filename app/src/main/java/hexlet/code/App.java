@@ -14,16 +14,13 @@ public class App {
         System.out.print("Your choice: ");
         String userChoice = scanner.next();
         switch (userChoice) {
-            case "1" -> {
-                Engine.greeting(scanner);
-                scanner.close();
-            }
+            case "1" -> Cli.greeting(scanner);
             case "0" -> scanner.close();
-            case "2" -> Engine.createGame(scanner, Even.DESCRIPTION, Even.runGame());
-            case "3" -> Engine.createGame(scanner, Calc.DESCRIPTION, Calc.runGame());
-            case "4" -> Engine.createGame(scanner, GCD.DESCRIPTION, GCD.runGame());
-            case "5" -> Engine.createGame(scanner, Progression.DESCRIPTION, Progression.runGame());
-            case "6" -> Engine.createGame(scanner, Prime.DESCRIPTION, Prime.runGame());
+            case "2" -> Even.runGame(scanner);
+            case "3" -> Calc.runGame(scanner);
+            case "4" -> GCD.runGame(scanner);
+            case "5" -> Progression.runGame(scanner);
+            case "6" -> Prime.runGame(scanner);
             default -> {
                 System.out.print("Incorrect input");
                 scanner.close();

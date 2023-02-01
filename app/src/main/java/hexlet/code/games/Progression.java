@@ -1,4 +1,5 @@
 package hexlet.code.games;
+import java.util.Scanner;
 import hexlet.code.utils.Utils;
 import hexlet.code.Engine;
 public class Progression {
@@ -18,23 +19,28 @@ public class Progression {
         }
         return result.toString();
     }
-    public static String[][] runGame() {
+    static String[] questionAndAnswer() {
+        final int minNumbersLength = 5;
+        final int maxNumbersLength = 10;
+        String[] numbers = new String[Utils.randNum(minNumbersLength, maxNumbersLength)];
+        fillArrayRandProgression(numbers);
+
+        int placeOfMissingNumber = Utils.randNum(0, numbers.length);
+        String correctAnswer = numbers[placeOfMissingNumber];
+        numbers[placeOfMissingNumber] = "..";
+
+        String question = arrayToString(numbers);
+        String[] array = {question, correctAnswer};
+        return array;
+    }
+    public static void runGame(Scanner scanner) {
         int arraysCount = Engine.ROUNDS_COUNT;
-        String[][] questionAndAnswer = new String[arraysCount][2];
-        for (var item : questionAndAnswer) {
-            final int minNumbersLength = 5;
-            final int maxNumbersLength = 10;
-            String[] numbers = new String[Utils.randNum(minNumbersLength, maxNumbersLength)];
-            fillArrayRandProgression(numbers);
-
-            int placeOfMissingNumber = Utils.randNum(0, numbers.length);
-            String correctAnswer = numbers[placeOfMissingNumber];
-            numbers[placeOfMissingNumber] = "..";
-
-            String question = arrayToString(numbers);
-            item[0] = question;
-            item[1] = correctAnswer;
+        String[][] dataForGame = new String[arraysCount][2];
+        for (var item: dataForGame) {
+            String[] data = questionAndAnswer();
+            item[0] = data[0];
+            item[1] = data[1];
         }
-        return questionAndAnswer;
+        Engine.createGame(scanner, DESCRIPTION, dataForGame);
     }
 }

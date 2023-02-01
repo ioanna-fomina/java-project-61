@@ -1,4 +1,5 @@
 package hexlet.code.games;
+import java.util.Scanner;
 import hexlet.code.utils.Utils;
 import hexlet.code.Engine;
 public class Prime {
@@ -14,16 +15,21 @@ public class Prime {
         }
         return true;
     }
-    public static String[][] runGame() {
+    static String[] questionAndAnswer() {
+        int number = Utils.randNum();
+        String question = Integer.toString(number);
+        String correctAnswer = isPrime(number) ? "yes" : "no";
+        String[] array = {question, correctAnswer};
+        return array;
+    }
+    public static void runGame(Scanner scanner) {
         int arraysCount = Engine.ROUNDS_COUNT;
-        String[][] questionAndAnswer = new String[arraysCount][2];
-        for (var item : questionAndAnswer) {
-            int number = Utils.randNum();
-            String question = Integer.toString(number);
-            String correctAnswer = isPrime(number) ? "yes" : "no";
-            item[0] = question;
-            item[1] = correctAnswer;
+        String[][] dataForGame = new String[arraysCount][2];
+        for (var item: dataForGame) {
+            String[] data = questionAndAnswer();
+            item[0] = data[0];
+            item[1] = data[1];
         }
-        return questionAndAnswer;
+        Engine.createGame(scanner, DESCRIPTION, dataForGame);
     }
 }
